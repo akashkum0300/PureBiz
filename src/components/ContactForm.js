@@ -349,11 +349,24 @@ const ContactForm = () => {
               </p>
             </div>
 
-            {/* Map Placeholder */}
-            <div className="bg-secondary-100 rounded-xl h-64 flex items-center justify-center">
-              <div className="text-center text-secondary-500">
-                <FaMapMarkerAlt className="text-4xl mx-auto mb-2" />
-                <p>Interactive Map Coming Soon</p>
+            {/* Interactive Map */}
+            <div className="bg-secondary-100 rounded-xl h-64 overflow-hidden relative">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3563.8234567890123!2d82.1234567!3d26.7234567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDQzJzI0LjQiTiA4MsKwMDcnMjQuNCJF!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="PureBiz Laundry Services Location"
+                className="rounded-xl"
+              ></iframe>
+              <div className="absolute top-4 left-4 bg-white rounded-lg px-3 py-2 shadow-lg">
+                <div className="flex items-center gap-2">
+                  <FaMapMarkerAlt className="text-red-500" />
+                  <span className="text-sm font-medium">Ayodhya, UP</span>
+                </div>
               </div>
             </div>
           </div>
