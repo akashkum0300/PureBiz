@@ -1,0 +1,1634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PureBiz Laundry Services - Professional B2B Commercial Laundry Solutions</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Professional B2B laundry services for hotels and hospitals. Reliable, hygienic commercial laundry solutions with 24/7 support and guaranteed quality.">
+    <meta name="keywords" content="commercial laundry, hotel laundry, hospital linen, B2B laundry services, professional cleaning">
+    <meta name="author" content="PureBiz Laundry Services">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="PureBiz Laundry Services - Professional B2B Solutions">
+    <meta property="og:description" content="Trusted commercial laundry services for hotels and hospitals with 24/7 support and guaranteed quality.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://purebizlaundry.com">
+    <meta property="og:image" content="https://purebizlaundry.com/images/og-image.jpg">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="PureBiz Laundry Services">
+    <meta name="twitter:description" content="Professional B2B laundry solutions for hotels and hospitals">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- GSAP CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            300: '#93c5fd',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a'
+                        },
+                        secondary: {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            200: '#e2e8f0',
+                            300: '#cbd5e1',
+                            400: '#94a3b8',
+                            500: '#64748b',
+                            600: '#475569',
+                            700: '#334155',
+                            800: '#1e293b',
+                            900: '#0f172a'
+                        }
+                    },
+                    animation: {
+                        'bounce-slow': 'bounce 3s infinite',
+                        'fade-in': 'fadeIn 0.5s ease-in-out',
+                        'slide-up': 'slideUp 0.5s ease-out',
+                        'scale-in': 'scaleIn 0.3s ease-out'
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' }
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' }
+                        },
+                        scaleIn: {
+                            '0%': { transform: 'scale(0.9)', opacity: '0' },
+                            '100%': { transform: 'scale(1)', opacity: '1' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom Styles -->
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .btn-primary {
+            @apply bg-primary-600 hover:bg-primary-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl;
+        }
+        
+        .btn-secondary {
+            @apply bg-white hover:bg-primary-50 text-primary-600 font-semibold py-3 px-6 rounded-lg border-2 border-primary-600 transition-all duration-300;
+        }
+        
+        .section-padding {
+            @apply py-16 md:py-24;
+        }
+        
+        .container-custom {
+            @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+        }
+        
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Mobile menu styles */
+        .mobile-menu {
+            transform: translateX(-100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+        
+        /* Loading animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 1s ease-in-out infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="font-sans antialiased">
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 bg-white shadow-lg z-50 transition-all duration-300" id="header">
+        <div class="container-custom">
+            <div class="flex items-center justify-between py-4">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-primary-600 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-tshirt text-white text-lg"></i>
+                    </div>
+                    <div class="text-2xl font-bold text-secondary-900">
+                        PureBiz<span class="text-primary-600">Laundry</span>
+                    </div>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <nav class="hidden lg:flex items-center space-x-8">
+                    <a href="#home" class="text-secondary-700 hover:text-primary-600 font-medium transition-colors">Home</a>
+                    <a href="#about" class="text-secondary-700 hover:text-primary-600 font-medium transition-colors">About</a>
+                    <a href="#services" class="text-secondary-700 hover:text-primary-600 font-medium transition-colors">Services</a>
+                    <a href="#why-choose-us" class="text-secondary-700 hover:text-primary-600 font-medium transition-colors">Why Choose Us</a>
+                    <a href="#testimonials" class="text-secondary-700 hover:text-primary-600 font-medium transition-colors">Testimonials</a>
+                    <a href="#contact" class="text-secondary-700 hover:text-primary-600 font-medium transition-colors">Contact</a>
+                </nav>
+                
+                <!-- Contact Info & CTA -->
+                <div class="hidden lg:flex items-center space-x-4">
+                    <div class="text-right">
+                        <div class="text-sm text-secondary-600">Call Us Now</div>
+                        <div class="font-semibold text-primary-600">+91 (8318424372) LAUNDRY</div>
+                    </div>
+                    <button class="btn-primary" onclick="scrollToSection('contact')">
+                        Get Quote
+                    </button>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="lg:hidden text-secondary-700 hover:text-primary-600" id="mobile-menu-btn">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="lg:hidden mobile-menu fixed top-0 left-0 w-full h-full bg-white z-50" id="mobile-menu">
+            <div class="flex items-center justify-between p-4 border-b">
+                <div class="text-xl font-bold text-secondary-900">Menu</div>
+                <button class="text-secondary-700 hover:text-primary-600" id="mobile-menu-close">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <nav class="p-4 space-y-4">
+                <a href="#home" class="block text-secondary-700 hover:text-primary-600 font-medium py-2 mobile-menu-link">Home</a>
+                <a href="#about" class="block text-secondary-700 hover:text-primary-600 font-medium py-2 mobile-menu-link">About</a>
+                <a href="#services" class="block text-secondary-700 hover:text-primary-600 font-medium py-2 mobile-menu-link">Services</a>
+                <a href="#why-choose-us" class="block text-secondary-700 hover:text-primary-600 font-medium py-2 mobile-menu-link">Why Choose Us</a>
+                <a href="#testimonials" class="block text-secondary-700 hover:text-primary-600 font-medium py-2 mobile-menu-link">Testimonials</a>
+                <a href="#contact" class="block text-secondary-700 hover:text-primary-600 font-medium py-2 mobile-menu-link">Contact</a>
+                <div class="pt-4 border-t">
+                    <div class="text-center mb-4">
+                        <div class="text-sm text-secondary-600">Call Us Now</div>
+                        <div class="font-semibold text-primary-600">+91 (8318424372) LAUNDRY</div>
+                    </div>
+                    <button class="btn-primary w-full" onclick="scrollToSection('contact')">
+                        Get Quote
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center gradient-bg overflow-hidden pt-20">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%233b82f6\' fill-opacity=\'0.1\'%3E%3Ccircle cx=\'30\' cy=\'30\' r=\'4\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+        </div>
+
+        <div class="container-custom section-padding relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left Content -->
+                <div class="space-y-8">
+                    <div class="space-y-4" id="hero-title">
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-secondary-900 leading-tight">
+                            Professional
+                            <span class="text-gradient block">B2B Laundry</span>
+                            Solutions
+                        </h1>
+                    </div>
+
+                    <div id="hero-subtitle">
+                        <p class="text-xl text-secondary-600 leading-relaxed max-w-2xl">
+                            Trusted by hotels and hospitals nationwide. We provide reliable, hygienic, 
+                            and efficient commercial laundry services with 24/7 support and guaranteed quality.
+                        </p>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-4" id="hero-buttons">
+                        <button onclick="scrollToSection('contact')" class="btn-primary text-lg px-8 py-4">
+                            Request a Quote
+                        </button>
+                        <button class="btn-secondary text-lg px-8 py-4 flex items-center justify-center gap-3">
+                            <i class="fas fa-play text-sm"></i>
+                            Schedule Pickup
+                        </button>
+                    </div>
+
+                    <div class="space-y-3 pt-4" id="hero-features">
+                        <div class="flex items-center gap-3 text-secondary-700">
+                            <i class="fas fa-check-circle text-green-500"></i>
+                            <span class="font-medium">24-48 Hour Turnaround Time</span>
+                        </div>
+                        <div class="flex items-center gap-3 text-secondary-700">
+                            <i class="fas fa-check-circle text-green-500"></i>
+                            <span class="font-medium">Hospital-Grade Sterilization</span>
+                        </div>
+                        <div class="flex items-center gap-3 text-secondary-700">
+                            <i class="fas fa-check-circle text-green-500"></i>
+                            <span class="font-medium">Free Pickup & Delivery</span>
+                        </div>
+                        <div class="flex items-center gap-3 text-secondary-700">
+                            <i class="fas fa-check-circle text-green-500"></i>
+                            <span class="font-medium">24/7 Customer Support</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Content - Hero Image/Video -->
+                <div class="relative">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+                        <!-- Placeholder for hero image/video -->
+                        <div class="aspect-video bg-gradient-to-br from-primary-100 to-blue-200 flex items-center justify-center">
+                            <div class="text-center space-y-4">
+                                <div class="w-24 h-24 bg-white rounded-full flex items-center justify-center mx-auto shadow-lg">
+                                    <i class="fas fa-play text-primary-600 text-2xl ml-1"></i>
+                                </div>
+                                <p class="text-secondary-700 font-medium">
+                                    Watch Our Process in Action
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- Floating Stats -->
+                        <div class="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-xl p-6 animate-bounce-slow">
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-primary-600">500+</div>
+                                <div class="text-sm text-secondary-600">Happy Clients</div>
+                            </div>
+                        </div>
+                        
+                        <div class="absolute -top-6 -right-6 bg-white rounded-xl shadow-xl p-6 animate-bounce-slow" style="animation-delay: 0.4s;">
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-green-600">99.9%</div>
+                                <div class="text-sm text-secondary-600">Quality Rate</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <div class="w-6 h-10 border-2 border-secondary-400 rounded-full flex justify-center">
+                <div class="w-1 h-3 bg-secondary-400 rounded-full mt-2 animate-pulse"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section-padding bg-white">
+        <div class="container-custom">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h3 class="text-primary-600 font-semibold text-lg uppercase tracking-wide mb-4">
+                    About PureBiz
+                </h3>
+                <h2 class="text-4xl md:text-5xl font-bold text-secondary-900 mb-6">
+                    Your Trusted Partner in 
+                    <span class="text-gradient">Commercial Laundry</span>
+                </h2>
+                <p class="text-xl text-secondary-600 max-w-3xl mx-auto leading-relaxed">
+                    With over 15 years of experience, we've built our reputation on reliability, 
+                    quality, and exceptional service in the commercial laundry industry.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <!-- Left Content -->
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="text-2xl font-bold text-secondary-900 mb-4">
+                            Our Mission
+                        </h3>
+                        <p class="text-secondary-600 leading-relaxed mb-6">
+                            To provide exceptional commercial laundry services that exceed our clients' 
+                            expectations while maintaining the highest standards of hygiene, reliability, 
+                            and environmental responsibility.
+                        </p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-primary-50 p-6 rounded-xl">
+                            <div class="text-3xl font-bold text-primary-600 mb-2">15+</div>
+                            <div class="text-secondary-700 font-medium">Years Experience</div>
+                        </div>
+                        <div class="bg-green-50 p-6 rounded-xl">
+                            <div class="text-3xl font-bold text-green-600 mb-2">500+</div>
+                            <div class="text-secondary-700 font-medium">Satisfied Clients</div>
+                        </div>
+                        <div class="bg-blue-50 p-6 rounded-xl">
+                            <div class="text-3xl font-bold text-blue-600 mb-2">24/7</div>
+                            <div class="text-secondary-700 font-medium">Support Available</div>
+                        </div>
+                        <div class="bg-purple-50 p-6 rounded-xl">
+                            <div class="text-3xl font-bold text-purple-600 mb-2">99.9%</div>
+                            <div class="text-secondary-700 font-medium">Quality Rate</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Content -->
+                <div class="relative">
+                    <div class="bg-gradient-to-br from-primary-100 to-blue-200 rounded-2xl p-8 h-96 flex items-center justify-center">
+                        <div class="text-center">
+                            <i class="fas fa-industry text-6xl text-primary-600 mb-4"></i>
+                            <p class="text-secondary-700 font-medium">
+                                State-of-the-art Facility
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section-padding gradient-bg">
+        <div class="container-custom">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h3 class="text-primary-600 font-semibold text-lg uppercase tracking-wide mb-4">
+                    Our Services
+                </h3>
+                <h2 class="text-4xl md:text-5xl font-bold text-secondary-900 mb-6">
+                    Comprehensive B2B 
+                    <span class="text-gradient">Laundry Solutions</span>
+                </h2>
+                <p class="text-xl text-secondary-600 max-w-3xl mx-auto leading-relaxed">
+                    We provide specialized laundry services tailored to the unique needs of hotels 
+                    and hospitals, ensuring the highest standards of cleanliness and hygiene.
+                </p>
+            </div>
+
+            <!-- Services Grid -->
+            <div class="grid md:grid-cols-2 gap-8 mb-16">
+                <!-- Hotel Laundry -->
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden card-hover group">
+                    <div class="bg-gradient-to-r from-blue-500 to-blue-600 p-8 text-white">
+                        <div class="flex items-center space-x-4 mb-4">
+                            <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center">
+                                <i class="fas fa-hotel text-3xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold">Hotel Laundry</h3>
+                        </div>
+                        <p class="text-white/90 leading-relaxed">
+                            Premium laundry services for luxury hotels and resorts. We handle bed linens, towels, uniforms, and guest laundry with the highest standards.
+                        </p>
+                    </div>
+                    <div class="p-8">
+                        <h4 class="text-lg font-semibold text-secondary-900 mb-4">Key Features:</h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-green-500"></i>
+                                <span class="text-secondary-700">Luxury linen care</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-green-500"></i>
+                                <span class="text-secondary-700">Guest laundry services</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-green-500"></i>
+                                <span class="text-secondary-700">Staff uniform cleaning</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-green-500"></i>
+                                <span class="text-secondary-700">Express turnaround options</span>
+                            </li>
+                        </ul>
+                        <button class="mt-6 w-full btn-secondary group-hover:btn-primary transition-all duration-300">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Hospital Linen -->
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden card-hover group">
+                    <div class="bg-gradient-to-r from-green-500 to-green-600 p-8 text-white">
+                        <div class="flex items-center space-x-4 mb-4">
+                            <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center">
+                                <i class="fas fa-hospital text-3xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold">Hospital Linen Cleaning</h3>
+                        </div>
+                        <p class="text-white/90 leading-relaxed">
+                            Medical-grade cleaning and sterilization for healthcare facilities. We ensure complete hygiene and safety for all medical linens.
+                        </p>
+                    </div>
+                    <div class="p-8">
+                        <h4 class="text-lg font-semibold text-secondary-900 mb-4">Key Features:</h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-green-500"></i>
+                                <span class="text-secondary-700">Medical-grade sterilization</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-green-500"></i>
+                                <span class="text-secondary-700">Infection control protocols</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-green-500"></i>
+                                <span class="text-secondary-700">Specialized detergents</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-green-500"></i>
+                                <span class="text-secondary-700">Compliance with health standards</span>
+                            </li>
+                        </ul>
+                        <button class="mt-6 w-full btn-secondary group-hover:btn-primary transition-all duration-300">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Pickup & Delivery -->
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden card-hover group">
+                    <div class="bg-gradient-to-r from-purple-500 to-purple-600 p-8 text-white">
+                        <div class="flex items-center space-x-4 mb-4">
+                            <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center">
+                                <i class="fas fa-truck text-3xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold">Pickup & Delivery</h3>
+                        </div>
+                        <p class="text-white/90 leading-relaxed">
+                            Convenient pickup and delivery services that fit your schedule. We provide reliable transportation with tracking and scheduling.
+                        </p>
+                    </div>
+                    <div class="p-8">
+                        <h4 class="text-lg font-semibold text-secondary-900 mb-4">Key Features:</h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-green-500"></i>
+                                <span class="text-secondary-700">Scheduled pickups</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-green-500"></i>
+                                <span class="text-secondary-700">Real-time tracking</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-green-500"></i>
+                                <span class="text-secondary-700">Flexible delivery windows</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-green-500"></i>
+                                <span class="text-secondary-700">Emergency service available</span>
+                            </li>
+                        </ul>
+                        <button class="mt-6 w-full btn-secondary group-hover:btn-primary transition-all duration-300">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Bulk Washing -->
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden card-hover group">
+                    <div class="bg-gradient-to-r from-orange-500 to-orange-600 p-8 text-white">
+                        <div class="flex items-center space-x-4 mb-4">
+                            <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center">
+                                <i class="fas fa-industry text-3xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold">Bulk Washing & Sterilization</h3>
+                        </div>
+                        <p class="text-white/90 leading-relaxed">
+                            Large-volume processing with industrial-grade equipment. Perfect for high-capacity needs with consistent quality.
+                        </p>
+                    </div>
+                    <div class="p-8">
+                        <h4 class="text-lg font-semibold text-secondary-900 mb-4">Key Features:</h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-green-500"></i>
+                                <span class="text-secondary-700">High-capacity processing</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-green-500"></i>
+                                <span class="text-secondary-700">Industrial equipment</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-green-500"></i>
+                                <span class="text-secondary-700">Quality consistency</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-green-500"></i>
+                                <span class="text-secondary-700">Cost-effective pricing</span>
+                            </li>
+                        </ul>
+                        <button class="mt-6 w-full btn-secondary group-hover:btn-primary transition-all duration-300">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Process Overview -->
+            <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12">
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl font-bold text-secondary-900 mb-4">
+                        Our Proven Process
+                    </h3>
+                    <p class="text-secondary-600 text-lg">
+                        A streamlined workflow designed for efficiency and quality
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-4 gap-8">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-primary-600 text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">
+                            01
+                        </div>
+                        <h4 class="text-lg font-semibold text-secondary-900 mb-2">Collection</h4>
+                        <p class="text-secondary-600">Scheduled pickup from your facility</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-primary-600 text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">
+                            02
+                        </div>
+                        <h4 class="text-lg font-semibold text-secondary-900 mb-2">Processing</h4>
+                        <p class="text-secondary-600">Professional cleaning and sterilization</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-primary-600 text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">
+                            03
+                        </div>
+                        <h4 class="text-lg font-semibold text-secondary-900 mb-2">Quality Check</h4>
+                        <p class="text-secondary-600">Thorough inspection and packaging</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-primary-600 text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">
+                            04
+                        </div>
+                        <h4 class="text-lg font-semibold text-secondary-900 mb-2">Delivery</h4>
+                        <p class="text-secondary-600">On-time delivery to your location</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-choose-us" class="section-padding bg-white">
+        <div class="container-custom">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h3 class="text-primary-600 font-semibold text-lg uppercase tracking-wide mb-4">
+                    Why Choose PureBiz
+                </h3>
+                <h2 class="text-4xl md:text-5xl font-bold text-secondary-900 mb-6">
+                    The Clear Choice for 
+                    <span class="text-gradient">Commercial Laundry</span>
+                </h2>
+                <p class="text-xl text-secondary-600 max-w-3xl mx-auto leading-relaxed">
+                    We combine cutting-edge technology, experienced professionals, and unwavering 
+                    commitment to deliver exceptional results that exceed your expectations.
+                </p>
+            </div>
+
+            <!-- Benefits Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+                <div class="group bg-gradient-to-br from-primary-50 to-blue-50 p-6 rounded-xl card-hover border border-primary-100">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-clock text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-secondary-900 mb-3">Timely Delivery</h3>
+                        <p class="text-secondary-600 mb-4 leading-relaxed">
+                            Guaranteed 24-48 hour turnaround time with express options available for urgent needs.
+                        </p>
+                        <div class="inline-block bg-primary-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            99.8% On-Time Rate
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group bg-gradient-to-br from-primary-50 to-blue-50 p-6 rounded-xl card-hover border border-primary-100">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-shield-alt text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-secondary-900 mb-3">Superior Hygiene</h3>
+                        <p class="text-secondary-600 mb-4 leading-relaxed">
+                            Hospital-grade cleaning processes with medical-level sterilization and quality control.
+                        </p>
+                        <div class="inline-block bg-primary-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            Medical Grade Standards
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group bg-gradient-to-br from-primary-50 to-blue-50 p-6 rounded-xl card-hover border border-primary-100">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-headset text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-secondary-900 mb-3">24/7 Support</h3>
+                        <p class="text-secondary-600 mb-4 leading-relaxed">
+                            Round-the-clock customer service with dedicated account managers for seamless communication.
+                        </p>
+                        <div class="inline-block bg-primary-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            Always Available
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group bg-gradient-to-br from-primary-50 to-blue-50 p-6 rounded-xl card-hover border border-primary-100">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-dollar-sign text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-secondary-900 mb-3">Affordable Rates</h3>
+                        <p class="text-secondary-600 mb-4 leading-relaxed">
+                            Competitive pricing with transparent billing and volume discounts for long-term partnerships.
+                        </p>
+                        <div class="inline-block bg-primary-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            Best Value Guarantee
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Comparison Section -->
+            <div class="bg-gradient-to-r from-primary-600 to-blue-600 rounded-2xl p-8 md:p-12 text-white">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h3 class="text-3xl font-bold mb-6">See the PureBiz Difference</h3>
+                        <p class="text-xl text-blue-100 mb-8 leading-relaxed">
+                            Compare our comprehensive service offering with traditional laundry providers 
+                            and see why leading hotels and hospitals choose PureBiz.
+                        </p>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-6 h-6 bg-green-400 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-check text-white text-sm"></i>
+                                </div>
+                                <span class="text-blue-100">Advanced tracking and reporting systems</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-6 h-6 bg-green-400 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-check text-white text-sm"></i>
+                                </div>
+                                <span class="text-blue-100">Dedicated account management team</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-6 h-6 bg-green-400 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-check text-white text-sm"></i>
+                                </div>
+                                <span class="text-blue-100">Flexible pickup and delivery schedules</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-6 h-6 bg-green-400 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-check text-white text-sm"></i>
+                                </div>
+                                <span class="text-blue-100">Emergency and rush service capabilities</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white/10 backdrop-blur-sm rounded-xl p-8">
+                        <h4 class="text-2xl font-bold mb-6 text-center">Ready to Experience the Difference?</h4>
+                        
+                        <div class="space-y-4 mb-8">
+                            <div class="flex justify-between items-center py-2 border-b border-white/20">
+                                <span>Free Consultation</span>
+                                <span class="font-semibold">✓ Included</span>
+                            </div>
+                            <div class="flex justify-between items-center py-2 border-b border-white/20">
+                                <span>Custom Pricing</span>
+                                <span class="font-semibold">✓ Available</span>
+                            </div>
+                            <div class="flex justify-between items-center py-2 border-b border-white/20">
+                                <span>Trial Period</span>
+                                <span class="font-semibold">✓ 30 Days</span>
+                            </div>
+                            <div class="flex justify-between items-center py-2">
+                                <span>Setup Fee</span>
+                                <span class="font-semibold text-green-300">$0</span>
+                            </div>
+                        </div>
+
+                        <button class="w-full bg-white text-primary-600 font-bold py-4 px-6 rounded-lg hover:bg-gray-50 transition-colors duration-300" onclick="scrollToSection('contact')">
+                            Get Started Today
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section-padding gradient-bg">
+        <div class="container-custom">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h3 class="text-primary-600 font-semibold text-lg uppercase tracking-wide mb-4">
+                    Client Testimonials
+                </h3>
+                <h2 class="text-4xl md:text-5xl font-bold text-secondary-900 mb-6">
+                    What Our Clients 
+                    <span class="text-gradient">Say About Us</span>
+                </h2>
+                <p class="text-xl text-secondary-600 max-w-3xl mx-auto leading-relaxed">
+                    Don't just take our word for it. Here's what leading hotels and hospitals 
+                    say about their experience with PureBiz Laundry Services.
+                </p>
+            </div>
+
+            <!-- Testimonial Carousel -->
+            <div class="bg-white rounded-2xl shadow-2xl p-8 md:p-12 mb-16 relative overflow-hidden">
+                <div class="absolute top-8 left-8 text-primary-200 opacity-50">
+                    <i class="fas fa-quote-left text-6xl"></i>
+                </div>
+                
+                <div class="relative z-10" id="testimonial-content">
+                    <div class="flex flex-col lg:flex-row items-center gap-8">
+                        <!-- Testimonial Content -->
+                        <div class="flex-1 text-center lg:text-left">
+                            <div class="flex justify-center lg:justify-start mb-4">
+                                <i class="fas fa-star text-yellow-400 text-xl"></i>
+                                <i class="fas fa-star text-yellow-400 text-xl"></i>
+                                <i class="fas fa-star text-yellow-400 text-xl"></i>
+                                <i class="fas fa-star text-yellow-400 text-xl"></i>
+                                <i class="fas fa-star text-yellow-400 text-xl"></i>
+                            </div>
+                            
+                            <p class="text-xl text-secondary-700 leading-relaxed mb-8 italic" id="testimonial-text">
+                                "PureBiz has transformed our laundry operations. Their attention to detail and consistent quality has elevated our guest experience significantly. The 24/7 support is invaluable for our 24-hour operations."
+                            </p>
+                            
+                            <div class="flex items-center justify-center lg:justify-start space-x-4">
+                                <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-user text-primary-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-bold text-secondary-900" id="testimonial-name">Sarah Johnson</h4>
+                                    <p class="text-secondary-600" id="testimonial-position">General Manager</p>
+                                    <p class="text-primary-600 font-semibold" id="testimonial-company">Grand Plaza Hotel</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Company Logo -->
+                        <div class="text-8xl opacity-20" id="testimonial-logo">🏨</div>
+                    </div>
+                </div>
+
+                <!-- Navigation Arrows -->
+                <button onclick="prevTestimonial()" class="absolute left-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-primary-600 text-white rounded-full flex items-center justify-center hover:bg-primary-700 transition-colors">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                
+                <button onclick="nextTestimonial()" class="absolute right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-primary-600 text-white rounded-full flex items-center justify-center hover:bg-primary-700 transition-colors">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+
+                <!-- Dots Indicator -->
+                <div class="flex justify-center space-x-2 mt-8" id="testimonial-dots">
+                    <button onclick="goToTestimonial(0)" class="w-3 h-3 rounded-full bg-primary-600 testimonial-dot active"></button>
+                    <button onclick="goToTestimonial(1)" class="w-3 h-3 rounded-full bg-secondary-300 testimonial-dot"></button>
+                    <button onclick="goToTestimonial(2)" class="w-3 h-3 rounded-full bg-secondary-300 testimonial-dot"></button>
+                    <button onclick="goToTestimonial(3)" class="w-3 h-3 rounded-full bg-secondary-300 testimonial-dot"></button>
+                </div>
+            </div>
+
+            <!-- Client Logos -->
+            <div class="text-center">
+                <h3 class="text-2xl font-bold text-secondary-900 mb-8">Trusted by Leading Organizations</h3>
+                
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
+                    <div class="bg-white rounded-lg p-6 shadow-lg card-hover text-center">
+                        <div class="text-4xl mb-2">🏨</div>
+                        <div class="text-sm text-secondary-600 font-medium">Grand Plaza Hotel</div>
+                    </div>
+                    <div class="bg-white rounded-lg p-6 shadow-lg card-hover text-center">
+                        <div class="text-4xl mb-2">🏥</div>
+                        <div class="text-sm text-secondary-600 font-medium">Metropolitan Medical</div>
+                    </div>
+                    <div class="bg-white rounded-lg p-6 shadow-lg card-hover text-center">
+                        <div class="text-4xl mb-2">🌴</div>
+                        <div class="text-sm text-secondary-600 font-medium">Luxury Resort & Spa</div>
+                    </div>
+                    <div class="bg-white rounded-lg p-6 shadow-lg card-hover text-center">
+                        <div class="text-4xl mb-2">⚕️</div>
+                        <div class="text-sm text-secondary-600 font-medium">City General Hospital</div>
+                    </div>
+                    <div class="bg-white rounded-lg p-6 shadow-lg card-hover text-center">
+                        <div class="text-4xl mb-2">🏢</div>
+                        <div class="text-sm text-secondary-600 font-medium">Business Hotel Chain</div>
+                    </div>
+                    <div class="bg-white rounded-lg p-6 shadow-lg card-hover text-center">
+                        <div class="text-4xl mb-2">🩺</div>
+                        <div class="text-sm text-secondary-600 font-medium">Regional Medical Center</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding bg-white">
+        <div class="container-custom">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h3 class="text-primary-600 font-semibold text-lg uppercase tracking-wide mb-4">
+                    Get In Touch
+                </h3>
+                <h2 class="text-4xl md:text-5xl font-bold text-secondary-900 mb-6">
+                    Ready to Get 
+                    <span class="text-gradient">Started?</span>
+                </h2>
+                <p class="text-xl text-secondary-600 max-w-3xl mx-auto leading-relaxed">
+                    Contact us today for a free consultation and custom quote. Our team is ready 
+                    to discuss your specific laundry needs and create a tailored solution.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-16">
+                <!-- Contact Form -->
+                <div class="bg-gradient-to-br from-primary-50 to-blue-50 rounded-2xl p-8 md:p-10">
+                    <h3 class="text-2xl font-bold text-secondary-900 mb-6">Request a Free Quote</h3>
+                    
+                    <form id="contact-form" class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block text-sm font-semibold text-secondary-700 mb-2">
+                                    Full Name *
+                                </label>
+                                <input
+                                    type="text"
+                                    id="name"
+                                    name="name"
+                                    required
+                                    class="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300"
+                                    placeholder="Your full name"
+                                />
+                            </div>
+                            
+                            <div>
+                                <label for="company" class="block text-sm font-semibold text-secondary-700 mb-2">
+                                    Company Name *
+                                </label>
+                                <input
+                                    type="text"
+                                    id="company"
+                                    name="company"
+                                    required
+                                    class="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300"
+                                    placeholder="Your company name"
+                                />
+                            </div>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="email" class="block text-sm font-semibold text-secondary-700 mb-2">
+                                    Email Address *
+                                </label>
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    required
+                                    class="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300"
+                                    placeholder="your@email.com"
+                                />
+                            </div>
+                            
+                            <div>
+                                <label for="phone" class="block text-sm font-semibold text-secondary-700 mb-2">
+                                    Phone Number *
+                                </label>
+                                <input
+                                    type="tel"
+                                    id="phone"
+                                    name="phone"
+                                    required
+                                    class="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300"
+                                    placeholder="(+91) 1234567890"
+                                />
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="service" class="block text-sm font-semibold text-secondary-700 mb-2">
+                                Service Type *
+                            </label>
+                            <select
+                                id="service"
+                                name="service"
+                                required
+                                class="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300"
+                            >
+                                <option value="">Select a service</option>
+                                <option value="hotel-laundry">Hotel Laundry</option>
+                                <option value="hospital-linen">Hospital Linen Cleaning</option>
+                                <option value="pickup-delivery">Pickup & Delivery</option>
+                                <option value="bulk-washing">Bulk Washing & Sterilization</option>
+                                <option value="custom-solution">Custom Solution</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="message" class="block text-sm font-semibold text-secondary-700 mb-2">
+                                Message
+                            </label>
+                            <textarea
+                                id="message"
+                                name="message"
+                                rows="5"
+                                class="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300 resize-vertical"
+                                placeholder="Tell us about your specific needs, volume requirements, or any questions you have..."
+                            ></textarea>
+                        </div>
+
+                        <button
+                            type="submit"
+                            class="w-full btn-primary text-lg py-4 flex items-center justify-center gap-3"
+                            id="submit-btn"
+                        >
+                            <i class="fas fa-paper-plane"></i>
+                            Send Message
+                        </button>
+
+                        <div id="form-message" class="hidden"></div>
+                    </form>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="text-2xl font-bold text-secondary-900 mb-6">Contact Information</h3>
+                        <p class="text-secondary-600 text-lg leading-relaxed mb-8">
+                            We're here to help you find the perfect laundry solution for your business. 
+                            Reach out to us through any of the following channels.
+                        </p>
+                    </div>
+
+                    <div class="grid gap-6">
+                        <div class="bg-white rounded-xl p-6 shadow-lg card-hover">
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 text-blue-600 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-phone text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-secondary-900 mb-2">Phone</h4>
+                                    <p class="text-secondary-600">+91 (8318424372)</p>
+                                    <p class="text-secondary-600">+91 (8318424372)</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-xl p-6 shadow-lg card-hover">
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 text-green-600 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-envelope text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-secondary-900 mb-2">Email</h4>
+                                    <p class="text-secondary-600">info@purebizlaundry.com</p>
+                                    <p class="text-secondary-600">support@purebizlaundry.com</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-xl p-6 shadow-lg card-hover">
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 text-purple-600 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-map-marker-alt text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-secondary-900 mb-2">Address</h4>
+                                    <p class="text-secondary-600">Ayodhya</p>
+                                    <p class="text-secondary-600">Ayodhya, UP 224001</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-xl p-6 shadow-lg card-hover">
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 text-orange-600 bg-orange-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-clock text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-secondary-900 mb-2">Business Hours</h4>
+                                    <p class="text-secondary-600">Mon-Fri: 6:00 AM - 10:00 PM</p>
+                                    <p class="text-secondary-600">Sat-Sun: 8:00 AM - 8:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Emergency Contact -->
+                    <div class="bg-red-50 border-l-4 border-red-500 p-6 rounded-lg">
+                        <h4 class="text-lg font-semibold text-red-800 mb-2">Emergency Service</h4>
+                        <p class="text-red-700 mb-2">
+                            Need urgent laundry service? We're available 24/7 for emergency situations.
+                        </p>
+                        <p class="text-red-800 font-semibold">
+                            Emergency Hotline: +91 (8318424372) URGENT-1
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-secondary-900 text-white relative">
+        <!-- Back to Top Button -->
+        <button
+            onclick="scrollToTop()"
+            class="absolute -top-6 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-primary-600 hover:bg-primary-700 rounded-full flex items-center justify-center transition-colors duration-300 shadow-lg"
+        >
+            <i class="fas fa-arrow-up text-white"></i>
+        </button>
+
+        <!-- Main Footer Content -->
+        <div class="container-custom pt-16 pb-8">
+            <div class="grid lg:grid-cols-4 md:grid-cols-2 gap-8">
+                            </li>
+                        </ul>
+                        <button class="mt-6 w-full btn-secondary group-hover:btn-primary transition-all duration-300">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Process Overview -->
+            <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12">
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl font-bold text-secondary-900 mb-4">
+                        Our Proven Process
+                    </h3>
+                    <p class="text-secondary-600 text-lg">
+                        A streamlined workflow designed for efficiency and quality
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-4 gap-8">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-primary-600 text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">
+                            01
+                        </div>
+                        <h4 class="text-lg font-semibold text-secondary-900 mb-2">Collection</h4>
+                        <p class="text-secondary-600">Scheduled pickup from your facility</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-primary-600 text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">
+                            02
+                        </div>
+                        <h4 class="text-lg font-semibold text-secondary-900 mb-2">Processing</h4>
+                        <p class="text-secondary-600">Professional cleaning and sterilization</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-primary-600 text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">
+                            03
+                        </div>
+                        <h4 class="text-lg font-semibold text-secondary-900 mb-2">Quality Check</h4>
+                        <p class="text-secondary-600">Thorough inspection and packaging</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-primary-600 text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">
+                            04
+                        </div>
+                        <h4 class="text-lg font-semibold text-secondary-900 mb-2">Delivery</h4>
+                        <p class="text-secondary-600">On-time delivery to your location</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-choose-us" class="section-padding bg-white">
+        <div class="container-custom">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h3 class="text-primary-600 font-semibold text-lg uppercase tracking-wide mb-4">
+                    Why Choose PureBiz
+                </h3>
+                <h2 class="text-4xl md:text-5xl font-bold text-secondary-900 mb-6">
+                    The Clear Choice for 
+                    <span class="text-gradient">Commercial Laundry</span>
+                </h2>
+                <p class="text-xl text-secondary-600 max-w-3xl mx-auto leading-relaxed">
+                    We combine cutting-edge technology, experienced professionals, and unwavering 
+                    commitment to deliver exceptional results that exceed your expectations.
+                </p>
+            </div>
+
+            <!-- Benefits Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+                <div class="group bg-gradient-to-br from-primary-50 to-blue-50 p-6 rounded-xl card-hover border border-primary-100">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-clock text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-secondary-900 mb-3">Timely Delivery</h3>
+                        <p class="text-secondary-600 mb-4 leading-relaxed">
+                            Guaranteed 24-48 hour turnaround time with express options available for urgent needs.
+                        </p>
+                        <div class="inline-block bg-primary-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            99.8% On-Time Rate
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group bg-gradient-to-br from-primary-50 to-blue-50 p-6 rounded-xl card-hover border border-primary-100">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-shield-alt text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-secondary-900 mb-3">Superior Hygiene</h3>
+                        <p class="text-secondary-600 mb-4 leading-relaxed">
+                            Hospital-grade cleaning processes with medical-level sterilization and quality control.
+                        </p>
+                        <div class="inline-block bg-primary-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            Medical Grade Standards
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group bg-gradient-to-br from-primary-50 to-blue-50 p-6 rounded-xl card-hover border border-primary-100">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-headset text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-secondary-900 mb-3">24/7 Support</h3>
+                        <p class="text-secondary-600 mb-4 leading-relaxed">
+                            Round-the-clock customer service with dedicated account managers for seamless communication.
+                        </p>
+                        <div class="inline-block bg-primary-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            Always Available
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group bg-gradient-to-br from-primary-50 to-blue-50 p-6 rounded-xl card-hover border border-primary-100">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-dollar-sign text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-secondary-900 mb-3">Affordable Rates</h3>
+                        <p class="text-secondary-600 mb-4 leading-relaxed">
+                            Competitive pricing with transparent billing and volume discounts for long-term partnerships.
+                        </p>
+                        <div class="inline-block bg-primary-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            Best Value Guarantee
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Comparison Section -->
+            <div class="bg-gradient-to-r from-primary-600 to-blue-600 rounded-2xl p-8 md:p-12 text-white">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h3 class="text-3xl font-bold mb-6">See the PureBiz Difference</h3>
+                        <p class="text-xl text-blue-100 mb-8 leading-relaxed">
+                            Compare our comprehensive service offering with traditional laundry providers 
+                            and see why leading hotels and hospitals choose PureBiz.
+                        </p>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-6 h-6 bg-green-400 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-check text-white text-sm"></i>
+                                </div>
+                                <span class="text-blue-100">Advanced tracking and reporting systems</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-6 h-6 bg-green-400 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-check text-white text-sm"></i>
+                                </div>
+                                <span class="text-blue-100">Dedicated account management team</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-6 h-6 bg-green-400 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-check text-white text-sm"></i>
+                                </div>
+                                <span class="text-blue-100">Flexible pickup and delivery schedules</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-6 h-6 bg-green-400 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-check text-white text-sm"></i>
+                                </div>
+                                <span class="text-blue-100">Emergency and rush service capabilities</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white/10 backdrop-blur-sm rounded-xl p-8">
+                        <h4 class="text-2xl font-bold mb-6 text-center">Ready to Experience the Difference?</h4>
+                        
+                        <div class="space-y-4 mb-8">
+                            <div class="flex justify-between items-center py-2 border-b border-white/20">
+                                <span>Free Consultation</span>
+                                <span class="font-semibold">✓ Included</span>
+                            </div>
+                            <div class="flex justify-between items-center py-2 border-b border-white/20">
+                                <span>Custom Pricing</span>
+                                <span class="font-semibold">✓ Available</span>
+                            </div>
+                            <div class="flex justify-between items-center py-2 border-b border-white/20">
+                                <span>Trial Period</span>
+                                <span class="font-semibold">✓ 30 Days</span>
+                            </div>
+                            <div class="flex justify-between items-center py-2">
+                                <span>Setup Fee</span>
+                                <span class="font-semibold text-green-300">$0</span>
+                            </div>
+                        </div>
+
+                        <button class="w-full bg-white text-primary-600 font-bold py-4 px-6 rounded-lg hover:bg-gray-50 transition-colors duration-300" onclick="scrollToSection('contact')">
+                            Get Started Today
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section-padding gradient-bg">
+        <div class="container-custom">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h3 class="text-primary-600 font-semibold text-lg uppercase tracking-wide mb-4">
+                    Client Testimonials
+                </h3>
+                <h2 class="text-4xl md:text-5xl font-bold text-secondary-900 mb-6">
+                    What Our Clients 
+                    <span class="text-gradient">Say About Us</span>
+                </h2>
+                <p class="text-xl text-secondary-600 max-w-3xl mx-auto leading-relaxed">
+                    Don't just take our word for it. Here's what leading hotels and hospitals 
+                    say about their experience with PureBiz Laundry Services.
+                </p>
+            </div>
+
+            <!-- Testimonial Carousel -->
+            <div class="bg-white rounded-2xl shadow-2xl p-8 md:p-12 mb-16 relative overflow-hidden">
+                <div class="absolute top-8 left-8 text-primary-200 opacity-50">
+                    <i class="fas fa-quote-left text-6xl"></i>
+                </div>
+                
+                <div class="relative z-10" id="testimonial-content">
+                    <div class="flex flex-col lg:flex-row items-center gap-8">
+                        <!-- Testimonial Content -->
+                        <div class="flex-1 text-center lg:text-left">
+                            <div class="flex justify-center lg:justify-start mb-4">
+                                <i class="fas fa-star text-yellow-400 text-xl"></i>
+                                <i class="fas fa-star text-yellow-400 text-xl"></i>
+                                <i class="fas fa-star text-yellow-400 text-xl"></i>
+                                <i class="fas fa-star text-yellow-400 text-xl"></i>
+                                <i class="fas fa-star text-yellow-400 text-xl"></i>
+                            </div>
+                            
+                            <p class="text-xl text-secondary-700 leading-relaxed mb-8 italic" id="testimonial-text">
+                                "PureBiz has transformed our laundry operations. Their attention to detail and consistent quality has elevated our guest experience significantly. The 24/7 support is invaluable for our 24-hour operations."
+                            </p>
+                            
+                            <div class="flex items-center justify-center lg:justify-start space-x-4">
+                                <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-user text-primary-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-bold text-secondary-900" id="testimonial-name">Sarah Johnson</h4>
+                                    <p class="text-secondary-600" id="testimonial-position">General Manager</p>
+                                    <p class="text-primary-600 font-semibold" id="testimonial-company">Grand Plaza Hotel</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Company Logo -->
+                        <div class="text-8xl opacity-20" id="testimonial-logo">🏨</div>
+                    </div>
+                </div>
+
+                <!-- Navigation Arrows -->
+                <button onclick="prevTestimonial()" class="absolute left-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-primary-600 text-white rounded-full flex items-center justify-center hover:bg-primary-700 transition-colors">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                
+                <button onclick="nextTestimonial()" class="absolute right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-primary-600 text-white rounded-full flex items-center justify-center hover:bg-primary-700 transition-colors">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+
+                <!-- Dots Indicator -->
+                <div class="flex justify-center space-x-2 mt-8" id="testimonial-dots">
+                    <button onclick="goToTestimonial(0)" class="w-3 h-3 rounded-full bg-primary-600 testimonial-dot active"></button>
+                    <button onclick="goToTestimonial(1)" class="w-3 h-3 rounded-full bg-secondary-300 testimonial-dot"></button>
+                    <button onclick="goToTestimonial(2)" class="w-3 h-3 rounded-full bg-secondary-300 testimonial-dot"></button>
+                    <button onclick="goToTestimonial(3)" class="w-3 h-3 rounded-full bg-secondary-300 testimonial-dot"></button>
+                </div>
+            </div>
+
+            <!-- Client Logos -->
+            <div class="text-center">
+                <h3 class="text-2xl font-bold text-secondary-900 mb-8">Trusted by Leading Organizations</h3>
+                
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
+                    <div class="bg-white rounded-lg p-6 shadow-lg card-hover text-center">
+                        <div class="text-4xl mb-2">🏨</div>
+                        <div class="text-sm text-secondary-600 font-medium">Grand Plaza Hotel</div>
+                    </div>
+                    <div class="bg-white rounded-lg p-6 shadow-lg card-hover text-center">
+                        <div class="text-4xl mb-2">🏥</div>
+                        <div class="text-sm text-secondary-600 font-medium">Metropolitan Medical</div>
+                    </div>
+                    <div class="bg-white rounded-lg p-6 shadow-lg card-hover text-center">
+                        <div class="text-4xl mb-2">🌴</div>
+                        <div class="text-sm text-secondary-600 font-medium">Luxury Resort & Spa</div>
+                    </div>
+                    <div class="bg-white rounded-lg p-6 shadow-lg card-hover text-center">
+                        <div class="text-4xl mb-2">⚕️</div>
+                        <div class="text-sm text-secondary-600 font-medium">City General Hospital</div>
+                    </div>
+                    <div class="bg-white rounded-lg p-6 shadow-lg card-hover text-center">
+                        <div class="text-4xl mb-2">🏢</div>
+                        <div class="text-sm text-secondary-600 font-medium">Business Hotel Chain</div>
+                    </div>
+                    <div class="bg-white rounded-lg p-6 shadow-lg card-hover text-center">
+                        <div class="text-4xl mb-2">🩺</div>
+                        <div class="text-sm text-secondary-600 font-medium">Regional Medical Center</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding bg-white">
+        <div class="container-custom">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h3 class="text-primary-600 font-semibold text-lg uppercase tracking-wide mb-4">
+                    Get In Touch
+                </h3>
+                <h2 class="text-4xl md:text-5xl font-bold text-secondary-900 mb-6">
+                    Ready to Get 
+                    <span class="text-gradient">Started?</span>
+                </h2>
+                <p class="text-xl text-secondary-600 max-w-3xl mx-auto leading-relaxed">
+                    Contact us today for a free consultation and custom quote. Our team is ready 
+                    to discuss your specific laundry needs and create a tailored solution.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-16">
+                <!-- Contact Form -->
+                <div class="bg-gradient-to-br from-primary-50 to-blue-50 rounded-2xl p-8 md:p-10">
+                    <h3 class="text-2xl font-bold text-secondary-900 mb-6">Request a Free Quote</h3>
+                    
+                    <form id="contact-form" class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block text-sm font-semibold text-secondary-700 mb-2">
+                                    Full Name *
+                                </label>
+                                <input
+                                    type="text"
+                                    id="name"
+                                    name="name"
+                                    required
+                                    class="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300"
+                                    placeholder="Your full name"
+                                />
+                            </div>
+                            
+                            <div>
+                                <label for="company" class="block text-sm font-semibold text-secondary-700 mb-2">
+                                    Company Name *
+                                </label>
+                                <input
+                                    type="text"
+                                    id="company"
+                                    name="company"
+                                    required
+                                    class="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300"
+                                    placeholder="Your company name"
+                                />
+                            </div>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="email" class="block text-sm font-semibold text-secondary-700 mb-2">
+                                    Email Address *
+                                </label>
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    required
+                                    class="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300"
+                                    placeholder="your@email.com"
+                                />
+                            </div>
+                            
+                            <div>
+                                <label for="phone" class="block text-sm font-semibold text-secondary-700 mb-2">
+                                    Phone Number *
+                                </label>
+                                <input
+                                    type="tel"
+                                    id="phone"
+                                    name="phone"
+                                    required
+                                    class="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300"
+                                    placeholder="(555) 123-4567"
+                                />
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="service" class="block text-sm font-semibold text-secondary-700 mb-2">
+                                Service Type *
+                            </label>
+                            <select
+                                id="service"
+                                name="service"
+                                required
+                                class="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300"
+                            >
+                                <option value="">Select a service</option>
+                                <option value="hotel-laundry">Hotel Laundry</option>
+                                <option value="hospital-linen">Hospital Linen Cleaning</option>
+                                <option value="pickup-delivery">Pickup & Delivery</option>
+                                <option value="bulk-washing">Bulk Washing & Sterilization</option>
+                                <option value="custom-solution">Custom Solution</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="message" class="block text-sm font-semibold text-secondary-700 mb-2">
+                                Message
+                            </label>
+                            <textarea
+                                id="message"
+                                name="message"
+                                rows="5"
+                                class="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300 resize-vertical"
+                                placeholder="Tell us about your specific needs, volume requirements, or any questions you have..."
+                            ></textarea>
+                        </div>
+
+                        <button
+                            type="submit"
+                            class="w-full btn-primary text-lg py-4 flex items-center justify-center gap-3"
+                            id="submit-btn"
+                        >
+                            <i class="fas fa-paper-plane"></i>
+                            Send Message
+                        </button>
+
+                        <div id="form-message" class="hidden"></div>
+                    </form>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="text-2xl font-bold text-secondary-900 mb-6">Contact Information</h3>
+                        <p class="text-secondary-600 text-lg leading-relaxed mb-8">
+                            We're here to help you find the perfect laundry solution for your business. 
+                            Reach out to us through any of the following channels.
+                        </p>
+                    </div>
+
+                    <div class="grid gap-6">
+                        <div class="bg-white rounded-xl p-6 shadow-lg card-hover">
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 text-blue-600 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-phone text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-secondary-900 mb-2">Phone</h4>
+                                    <p class="text-secondary-600">+91 (8318424372)</p>
+                                    <p class="text-secondary-600">+91 (8318424372)</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-xl p-6 shadow-lg card-hover">
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 text-green-600 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-envelope text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-secondary-900 mb-2">Email</h4>
+                                    <p class="text-secondary-600">info@purebizlaundry.com</p>
+                                    <p class="text-secondary-600">support@purebizlaundry.com</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-xl p-6 shadow-lg card-hover">
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 text-purple-600 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-map-marker-alt text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-secondary-900 mb-2">Address</h4>
+                                    <p class="text-secondary-600">Ayodhya</p>
+                                    <p class="text-secondary-600">Ayodhya, UP 224001</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-xl p-6 shadow-lg card-hover">
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 text-orange-600 bg-orange-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-clock text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-secondary-900 mb-2">Business Hours</h4>
+                                    <p class="text-secondary-600">Mon-Fri: 6:00 AM - 10:00 PM</p>
+                                    <p class="text-secondary-600">Sat-Sun: 8:00 AM - 8:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Emergency Contact -->
+                    <div class="bg-red-50 border-l-4 border-red-500 p-6 rounded-lg">
+                        <h4 class="text-lg font-semibold text-red-800 mb-2">Emergency Service</h4>
+                        <p class="text-red-700 mb-2">
+                            Need urgent laundry service? We're available 24/7 for emergency situations.
+                        </p>
+                        <p class="text-red-800 font-semibold">
+                            Emergency Hotline: +91 (8318424372) URGENT-1
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-secondary-900 text-white relative">
+        <!-- Back to Top Button -->
+        <button
+            onclick="scrollToTop()"
+            class="absolute -top-6 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-primary-600 hover:bg-primary-700 rounded-full flex items-center justify-center transition-colors duration-300 shadow-lg"
+        >
+            <i class="fas fa-arrow-up text-white"></i>
+        </button>
+
+        <!-- Main Footer Content -->
+        <div class="container-custom pt-16 pb-8">
+            <div class="grid lg:grid-cols-4 md:grid-cols-2 gap-8">
