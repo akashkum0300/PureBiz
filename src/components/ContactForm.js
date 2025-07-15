@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaClock, FaPaperPlane } from 'react-icons/fa';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import contactBg from '../assets/contact-bg.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -112,8 +113,18 @@ const ContactForm = () => {
   ];
 
   return (
-    <section id="contact" className="section-padding bg-white" ref={sectionRef}>
-      <div className="container-custom">
+    <section id="contact" className="section-padding relative overflow-hidden" ref={sectionRef}>
+      {/* Beautiful Background Image */}
+      <div className="absolute inset-0">
+        <img 
+          src={contactBg} 
+          alt="Contact Background" 
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-white/95 via-blue-50/90 to-white/95"></div>
+      </div>
+      
+      <div className="container-custom relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
           <h3 className="text-primary-600 font-semibold text-lg uppercase tracking-wide mb-4">

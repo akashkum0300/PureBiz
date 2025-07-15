@@ -2,6 +2,8 @@ import React, { useEffect, useRef, useState } from 'react';
 import { FaStar, FaQuoteLeft, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import testimonialBg from '../assets/testimonial-bg.png';
+import clientFacility from '../assets/client-facility.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -89,8 +91,18 @@ const Testimonials = () => {
   };
 
   return (
-    <section id="testimonials" className="section-padding gradient-bg" ref={sectionRef}>
-      <div className="container-custom">
+    <section id="testimonials" className="section-padding relative overflow-hidden" ref={sectionRef}>
+      {/* Beautiful Background Image */}
+      <div className="absolute inset-0">
+        <img 
+          src={testimonialBg} 
+          alt="Testimonials Background" 
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/80 via-blue-800/70 to-blue-900/80"></div>
+      </div>
+      
+      <div className="container-custom relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
           <h3 className="text-primary-600 font-semibold text-lg uppercase tracking-wide mb-4">
@@ -106,76 +118,98 @@ const Testimonials = () => {
           </p>
         </div>
 
-        {/* Testimonial Carousel */}
-        <div className="bg-white rounded-2xl shadow-2xl p-8 md:p-12 mb-16 relative overflow-hidden">
-          <div className="absolute top-8 left-8 text-primary-200 opacity-50">
-            <FaQuoteLeft size={60} />
+        {/* Enhanced Testimonial Carousel */}
+        <div className="bg-gradient-to-br from-white via-blue-50 to-white rounded-2xl shadow-2xl p-8 md:p-12 mb-16 relative overflow-hidden">
+          {/* Background Pattern */}
+          <div className="absolute inset-0 opacity-5">
+            <div className="absolute inset-0" style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%233b82f6' fill-opacity='0.2'%3E%3Ccircle cx='40' cy='40' r='3'/%3E%3C/g%3E%3C/svg%3E")`,
+              backgroundSize: '80px 80px'
+            }}></div>
+          </div>
+
+          <div className="absolute top-8 left-8 text-primary-200 opacity-30">
+            <FaQuoteLeft size={80} />
           </div>
           
           <div className="relative z-10">
-            <div className="flex flex-col lg:flex-row items-center gap-8">
+            <div className="flex flex-col lg:flex-row items-center gap-12">
               {/* Testimonial Content */}
               <div className="flex-1 text-center lg:text-left">
-                <div className="flex justify-center lg:justify-start mb-4">
+                <div className="flex justify-center lg:justify-start mb-6">
                   {[...Array(testimonials[currentTestimonial].rating)].map((_, i) => (
-                    <FaStar key={i} className="text-yellow-400 text-xl" />
+                    <FaStar key={i} className="text-yellow-400 text-2xl mr-1 drop-shadow-sm" />
                   ))}
                 </div>
                 
-                <p className="text-xl text-secondary-700 leading-relaxed mb-8 italic">
+                <p className="text-2xl text-secondary-700 leading-relaxed mb-8 italic font-light">
                   "{testimonials[currentTestimonial].text}"
                 </p>
                 
-                <div className="flex items-center justify-center lg:justify-start space-x-4">
-                  <img 
-                    src={testimonials[currentTestimonial].image}
-                    alt={testimonials[currentTestimonial].name}
-                    className="w-16 h-16 rounded-full object-cover"
-                  />
+                <div className="flex items-center justify-center lg:justify-start space-x-6">
+                  <div className="relative">
+                    <img 
+                      src={testimonials[currentTestimonial].image}
+                      alt={testimonials[currentTestimonial].name}
+                      className="w-20 h-20 rounded-full object-cover shadow-lg border-4 border-white"
+                    />
+                    <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-green-500 rounded-full flex items-center justify-center border-2 border-white">
+                      <div className="w-3 h-3 bg-white rounded-full"></div>
+                    </div>
+                  </div>
                   <div>
-                    <h4 className="text-lg font-bold text-secondary-900">
+                    <h4 className="text-xl font-bold text-secondary-900 mb-1">
                       {testimonials[currentTestimonial].name}
                     </h4>
-                    <p className="text-secondary-600">
+                    <p className="text-secondary-600 font-medium">
                       {testimonials[currentTestimonial].position}
                     </p>
-                    <p className="text-primary-600 font-semibold">
+                    <p className="text-primary-600 font-semibold text-lg">
                       {testimonials[currentTestimonial].company}
                     </p>
                   </div>
                 </div>
               </div>
 
-              {/* Company Logo */}
-              <div className="text-8xl opacity-20">
-                {testimonials[currentTestimonial].logo}
+              {/* Enhanced Company Visual */}
+              <div className="relative">
+                <div className="w-32 h-32 bg-gradient-to-br from-primary-100 to-blue-200 rounded-2xl flex items-center justify-center shadow-lg">
+                  <div className="text-6xl opacity-60">
+                    {testimonials[currentTestimonial].logo}
+                  </div>
+                </div>
+                <div className="absolute -top-2 -right-2 w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center shadow-lg">
+                  <FaStar className="text-yellow-600 text-sm" />
+                </div>
               </div>
             </div>
           </div>
 
-          {/* Navigation Arrows */}
+          {/* Enhanced Navigation Arrows */}
           <button 
             onClick={prevTestimonial}
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-primary-600 text-white rounded-full flex items-center justify-center hover:bg-primary-700 transition-colors"
+            className="absolute left-6 top-1/2 transform -translate-y-1/2 w-14 h-14 bg-gradient-to-br from-primary-500 to-primary-700 text-white rounded-full flex items-center justify-center hover:from-primary-600 hover:to-primary-800 transition-all duration-300 shadow-lg hover:shadow-xl"
           >
-            <FaChevronLeft />
+            <FaChevronLeft className="text-lg" />
           </button>
           
           <button 
             onClick={nextTestimonial}
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-primary-600 text-white rounded-full flex items-center justify-center hover:bg-primary-700 transition-colors"
+            className="absolute right-6 top-1/2 transform -translate-y-1/2 w-14 h-14 bg-gradient-to-br from-primary-500 to-primary-700 text-white rounded-full flex items-center justify-center hover:from-primary-600 hover:to-primary-800 transition-all duration-300 shadow-lg hover:shadow-xl"
           >
-            <FaChevronRight />
+            <FaChevronRight className="text-lg" />
           </button>
 
-          {/* Dots Indicator */}
-          <div className="flex justify-center space-x-2 mt-8">
+          {/* Enhanced Dots Indicator */}
+          <div className="flex justify-center space-x-3 mt-10">
             {testimonials.map((_, index) => (
               <button
                 key={index}
                 onClick={() => goToTestimonial(index)}
-                className={`w-3 h-3 rounded-full transition-colors ${
-                  index === currentTestimonial ? 'bg-primary-600' : 'bg-secondary-300'
+                className={`w-4 h-4 rounded-full transition-all duration-300 ${
+                  index === currentTestimonial 
+                    ? 'bg-primary-600 scale-125 shadow-lg' 
+                    : 'bg-secondary-300 hover:bg-secondary-400'
                 }`}
               />
             ))}

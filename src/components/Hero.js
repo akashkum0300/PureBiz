@@ -2,6 +2,8 @@ import React, { useEffect, useRef, useState } from 'react';
 import { FaPlay, FaCheckCircle } from 'react-icons/fa';
 import { gsap } from 'gsap';
 import SchedulePickup from './SchedulePickup';
+import heroBg from '../assets/hero-bg.jpg';
+import heroLaundry from '../assets/hero-laundry.jpg';
 
 const Hero = () => {
   const titleRef = useRef(null);
@@ -121,65 +123,104 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Right Content - Professional Laundry Visualization */}
+          {/* Right Content - Enhanced Professional Laundry Visualization */}
           <div className="relative">
+            {/* Main Hero Image Container */}
             <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-white">
-              {/* Professional Laundry Scene */}
-              <div className="aspect-video bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center p-8">
-                <div className="grid grid-cols-2 gap-6 w-full max-w-md">
-                  {/* Washing Machine Icon */}
-                  <div className="bg-white rounded-xl p-6 shadow-lg text-center transform hover:scale-105 transition-transform">
-                    <div className="w-12 h-12 bg-blue-500 rounded-full mx-auto mb-3 flex items-center justify-center">
-                      <div className="w-6 h-6 border-2 border-white rounded-full animate-spin"></div>
+              {/* Professional Laundry Facility Background */}
+              <div className="aspect-video relative overflow-hidden">
+                {/* Real Hero Laundry Image */}
+                <img 
+                  src={heroLaundry} 
+                  alt="Professional Laundry Facility" 
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-900/40 to-blue-600/20"></div>
+                
+                {/* Professional Equipment Showcase */}
+                <div className="relative z-10 p-8 h-full flex items-center justify-center">
+                  <div className="grid grid-cols-2 gap-6 w-full max-w-md">
+                    {/* Industrial Washing Machine */}
+                    <div className="bg-white/95 backdrop-blur-sm rounded-xl p-6 shadow-lg text-center transform hover:scale-105 transition-all duration-300 hover:shadow-xl">
+                      <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full mx-auto mb-3 flex items-center justify-center shadow-lg">
+                        <div className="w-8 h-8 border-3 border-white rounded-full animate-spin border-t-transparent"></div>
+                      </div>
+                      <p className="text-sm font-semibold text-gray-800">Industrial Washing</p>
+                      <p className="text-xs text-gray-600 mt-1">High-Capacity</p>
                     </div>
-                    <p className="text-sm font-medium text-gray-700">Industrial Washing</p>
-                  </div>
-                  
-                  {/* Sterilization Icon */}
-                  <div className="bg-white rounded-xl p-6 shadow-lg text-center transform hover:scale-105 transition-transform animation-delay-200">
-                    <div className="w-12 h-12 bg-green-500 rounded-full mx-auto mb-3 flex items-center justify-center">
-                      <div className="w-6 h-6 bg-white rounded-full animate-pulse"></div>
+                    
+                    {/* Medical Sterilization */}
+                    <div className="bg-white/95 backdrop-blur-sm rounded-xl p-6 shadow-lg text-center transform hover:scale-105 transition-all duration-300 hover:shadow-xl animation-delay-200">
+                      <div className="w-14 h-14 bg-gradient-to-br from-green-500 to-green-600 rounded-full mx-auto mb-3 flex items-center justify-center shadow-lg">
+                        <div className="w-8 h-8 bg-white rounded-full animate-pulse flex items-center justify-center">
+                          <div className="w-4 h-4 bg-green-500 rounded-full"></div>
+                        </div>
+                      </div>
+                      <p className="text-sm font-semibold text-gray-800">Medical Grade</p>
+                      <p className="text-xs text-gray-600 mt-1">Sterilization</p>
                     </div>
-                    <p className="text-sm font-medium text-gray-700">Sterilization</p>
-                  </div>
-                  
-                  {/* Folding Icon */}
-                  <div className="bg-white rounded-xl p-6 shadow-lg text-center transform hover:scale-105 transition-transform animation-delay-400">
-                    <div className="w-12 h-12 bg-purple-500 rounded-full mx-auto mb-3 flex items-center justify-center">
-                      <div className="w-6 h-6 bg-white rounded-sm"></div>
+                    
+                    {/* Professional Folding */}
+                    <div className="bg-white/95 backdrop-blur-sm rounded-xl p-6 shadow-lg text-center transform hover:scale-105 transition-all duration-300 hover:shadow-xl animation-delay-400">
+                      <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full mx-auto mb-3 flex items-center justify-center shadow-lg">
+                        <div className="w-8 h-6 bg-white rounded-sm shadow-inner flex items-center justify-center">
+                          <div className="w-6 h-1 bg-purple-500 rounded"></div>
+                        </div>
+                      </div>
+                      <p className="text-sm font-semibold text-gray-800">Professional</p>
+                      <p className="text-xs text-gray-600 mt-1">Folding</p>
                     </div>
-                    <p className="text-sm font-medium text-gray-700">Professional Folding</p>
-                  </div>
-                  
-                  {/* Delivery Icon */}
-                  <div className="bg-white rounded-xl p-6 shadow-lg text-center transform hover:scale-105 transition-transform animation-delay-600">
-                    <div className="w-12 h-12 bg-orange-500 rounded-full mx-auto mb-3 flex items-center justify-center">
-                      <div className="w-6 h-6 bg-white rounded-sm transform rotate-45"></div>
+                    
+                    {/* Express Delivery */}
+                    <div className="bg-white/95 backdrop-blur-sm rounded-xl p-6 shadow-lg text-center transform hover:scale-105 transition-all duration-300 hover:shadow-xl animation-delay-600">
+                      <div className="w-14 h-14 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full mx-auto mb-3 flex items-center justify-center shadow-lg">
+                        <div className="w-8 h-6 bg-white rounded-sm transform rotate-12 shadow-inner flex items-center justify-center">
+                          <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
+                        </div>
+                      </div>
+                      <p className="text-sm font-semibold text-gray-800">Express</p>
+                      <p className="text-xs text-gray-600 mt-1">Delivery</p>
                     </div>
-                    <p className="text-sm font-medium text-gray-700">Fast Delivery</p>
                   </div>
                 </div>
               </div>
               
-              {/* Floating Stats */}
-              <div className="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-xl p-6 animate-bounce-slow">
+              {/* Enhanced Floating Stats */}
+              <div className="absolute -bottom-8 -left-8 bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-2xl p-6 animate-bounce-slow border border-gray-100">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-primary-600">500+</div>
-                  <div className="text-sm text-secondary-600">Happy Clients</div>
+                  <div className="text-3xl font-bold text-primary-600 mb-1">500+</div>
+                  <div className="text-sm text-secondary-600 font-medium">Happy Clients</div>
+                  <div className="text-xs text-secondary-400 mt-1">Hotels & Hospitals</div>
                 </div>
               </div>
               
-              <div className="absolute -top-6 -right-6 bg-white rounded-xl shadow-xl p-6 animation-delay-400 animate-bounce-slow">
+              <div className="absolute -top-8 -right-8 bg-gradient-to-br from-white to-green-50 rounded-xl shadow-2xl p-6 animation-delay-400 animate-bounce-slow border border-green-100">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-green-600">99.9%</div>
-                  <div className="text-sm text-secondary-600">Quality Rate</div>
+                  <div className="text-3xl font-bold text-green-600 mb-1">99.9%</div>
+                  <div className="text-sm text-secondary-600 font-medium">Quality Rate</div>
+                  <div className="text-xs text-secondary-400 mt-1">Guaranteed</div>
                 </div>
               </div>
 
-              <div className="absolute top-1/2 -left-4 bg-blue-500 text-white rounded-lg px-3 py-2 text-sm font-medium shadow-lg">
-                24/7 Service
+              <div className="absolute top-1/2 -left-6 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-lg px-4 py-3 text-sm font-semibold shadow-xl transform -translate-y-1/2">
+                <div className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+                  <span>24/7 Service</span>
+                </div>
+              </div>
+
+              {/* Quality Certification Badge */}
+              <div className="absolute bottom-4 right-4 bg-gradient-to-br from-yellow-400 to-yellow-500 text-yellow-900 rounded-full p-3 shadow-lg">
+                <div className="text-center">
+                  <div className="text-xs font-bold">ISO</div>
+                  <div className="text-xs">Certified</div>
+                </div>
               </div>
             </div>
+
+            {/* Additional Visual Elements */}
+            <div className="absolute -z-10 top-8 right-8 w-32 h-32 bg-blue-200 rounded-full opacity-20 animate-pulse"></div>
+            <div className="absolute -z-10 bottom-8 left-8 w-24 h-24 bg-green-200 rounded-full opacity-30 animate-pulse animation-delay-1000"></div>
           </div>
         </div>
       </div>
